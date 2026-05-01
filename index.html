@@ -9,9 +9,25 @@
 </head>
 </head>
 <body>
+    <div class="bg-scene">
+    <div class="liquid one"></div>
+    <div class="liquid two"></div>
+    <div class="particles">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span>
+    </div>
+    <svg class="doodle" viewBox="0 0 500 500">
+    <path d="M50 250 Q150 150 250 250 T450 250" />
+    </svg>
+    </div>
+    <div class="bg-anim">
+    <span></span>
+    <span></span>
+    <span></span>
+    </div>
     <div class="parallax-bg"></div>
     <div class="card">
-        <i class="fa-brands fa-whatsapp"></i>
+        <i class="fa-brands fa-free fire"></i>
         <h1>Halo Teman 👋</h1>
         <p>Namaku Arya Sena tinggi aku 150 ga terlalu tinggi kan ya,umur aku 20 taun ini,aku punya istri cemburuan banget aseli wir</p>
         <div class="sosmed">
@@ -29,4 +45,19 @@
         </a>
     </div>
 </body>
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+<script>
+  const music = document.getElementById("bgMusic");
+  music.volume = 0.15;
+
+  window.addEventListener("load", () => {
+    music.play().catch(() => {
+      document.addEventListener("click", () => {
+        music.play();
+      }, { once: true });
+    });
+  });
+</script>
 </html>
