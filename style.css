@@ -147,3 +147,251 @@ body {
   z-index: -2;
   transform: translateZ(0);
 }
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* BACKGROUND */
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+/* CARD */
+.card {
+  width: 320px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 18px;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  animation: fadeUp 0.8s ease;
+}
+
+/* FOTO PROFIL */
+.card img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #ddd;
+}
+
+/* JUDUL */
+.card h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+/* DESKRIPSI */
+.card p {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+/* BUTTON SOSMED */
+.social a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  background: #f1f1f1;
+  color: #333;
+  text-decoration: none;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.social a:hover {
+  background: #222;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* ANIMASI MASUK */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* BACKGROUND ANIMASI */
+.bg-anim {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -1;
+  background: #e3e6e7;
+}
+
+/* BENTUK KARTUN */
+.bg-anim span {
+  position: absolute;
+  display: block;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+  animation: float 18s infinite ease-in-out;
+}
+
+/* POSISI TIAP BENTUK */
+.bg-anim span:nth-child(1) {
+  top: 10%;
+  left: 15%;
+  animation-duration: 22s;
+}
+
+.bg-anim span:nth-child(2) {
+  top: 60%;
+  left: 60%;
+  width: 400px;
+  height: 400px;
+  animation-duration: 26s;
+}
+
+.bg-anim span:nth-child(3) {
+  top: 30%;
+  left: 75%;
+  width: 250px;
+  height: 250px;
+  animation-duration: 20s;
+}
+
+/* GERAK HALUS */
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-40px) translateX(30px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+/* BACKGROUND SCENE */
+.bg-scene {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, #e6e9eb, #dfe3e6);
+  overflow: hidden;
+  z-index: -1;
+}
+
+/* LIQUID SHAPE */
+.liquid {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  background: rgba(255,255,255,0.55);
+  filter: blur(60px);
+  border-radius: 50%;
+  animation: liquidMove 18s infinite alternate ease-in-out;
+}
+
+.liquid.one {
+  top: 10%;
+  left: 10%;
+}
+
+.liquid.two {
+  bottom: 5%;
+  right: 10%;
+  animation-duration: 22s;
+}
+
+@keyframes liquidMove {
+  from {
+    transform: translateY(0) translateX(0);
+  }
+  to {
+    transform: translateY(-60px) translateX(80px);
+  }
+}
+
+/* PARTIKEL */
+.particles span {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: floatUp 12s infinite ease-in;
+}
+
+.particles span:nth-child(odd) {
+  animation-duration: 16s;
+}
+
+.particles span:nth-child(n) {
+  left: calc(10% * var(--i));
+}
+
+.particles span {
+  bottom: -10px;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-110vh);
+    opacity: 0;
+  }
+}
+
+/* DOODLE LINE */
+.doodle {
+  position: absolute;
+  top: 30%;
+  left: -50px;
+  width: 600px;
+  opacity: 0.25;
+  animation: doodleMove 20s infinite alternate ease-in-out;
+}
+
+.doodle path {
+  fill: none;
+  stroke: #999;
+  stroke-width: 2;
+  stroke-dasharray: 8 10;
+}
+
+@keyframes doodleMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(80px);
+  }
+}
